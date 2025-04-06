@@ -12,10 +12,8 @@ export const useAddTodoList = (setFlags) => {
             push(todosFbRef, {
                 title, 
             })
-             .finally (()=>{
             setFlags()
             setIsCreating(false)
-        })
     }
 
     return {

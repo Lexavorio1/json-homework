@@ -9,10 +9,8 @@ export const useDelete = (setFlags) => {
         setIsDelete(true)
             const todoFbRef = ref(todosFireBase, `todos/${id}`)
             remove(todoFbRef)
-            .finally (()=>{
-                setIsDelete(false)
-                setFlags()
-            })
+            setIsDelete(false)
+            setFlags()
     }
 
     return { isDelete, onDelete };

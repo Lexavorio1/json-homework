@@ -20,8 +20,8 @@ export const useGetTodoList = () => {
                 } else {
                     setTodoList([]);
                 }
+                setIsLoading(false)
         })
-        .finally (()=>setIsLoading(true))
     }, [])
 
     return { todoList, isLoading }

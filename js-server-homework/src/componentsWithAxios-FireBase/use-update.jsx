@@ -7,12 +7,12 @@ export const useUpdate = (setFlags) => {
 
     const onUpdate = (id, title) => {
         setIsUpdate(true)
-            const todoFbRef = ref(todosFireBase, `todos/${id}`)
-            update(todoFbRef, { title })
-            .finally(()=>{
-                setIsUpdate(false)
-                setFlags()
-            })
+        const newTitle = prompt("Введите новый текст дела", title)
+        const todoFbRef = ref(todosFireBase, `todos/${id}`)
+        update(todoFbRef, { 
+            title: newTitle })
+        setIsUpdate(false)
+        setFlags()
     }
     return { isUpdate, onUpdate }
 }
