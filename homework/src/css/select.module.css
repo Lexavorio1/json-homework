@@ -1,0 +1,16 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 600px;
+}
+
+.grow {
+    display: flex;
+    gap: 5px;
+}
+
+.inputall {
+    height: 35px;
+    flex-grow: 1;
+}
