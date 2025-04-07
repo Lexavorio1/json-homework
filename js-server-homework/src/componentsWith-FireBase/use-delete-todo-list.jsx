@@ -13,5 +13,5 @@ export const useDelete = (setFlags) => {
             setFlags()
     }
 
-    return { isDelete, onDelete };
+    return { isDelete, onDelete }
 }

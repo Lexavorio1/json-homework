@@ -1,9 +1,9 @@
-import React from 'react';
-import styles from '../App.module.css';
+import React from 'react'
+import styles from '../App.module.css'
 
 export const Table = ({ people, isLoading, onDelete }) => {
   if (isLoading) {
-    return <div className={styles.loading}>Загрузка...</div>;
+    return <div className={styles.loading}>Загрузка...</div>
   }
 
   return (
@@ -31,5 +31,5 @@ export const Table = ({ people, isLoading, onDelete }) => {
         ))}
       </tbody>
     </table>
-  );
-};
+  )
+}

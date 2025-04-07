@@ -1,4 +1,4 @@
-import chroma from 'chroma-js';
+import chroma from 'chroma-js'
 
 export const colourStyles = {
   control: (styles) => ({ ...styles, backgroundColor: 'white' }),
@@ -30,7 +30,7 @@ export const colourStyles = {
             : color.alpha(0.3).css()
           : undefined,
       },
-    };
+    }
   },
   multiValue: (styles, { data }) => {
     const color = chroma(data.color);

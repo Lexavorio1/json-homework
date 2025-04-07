@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from 'axios';
+import { useState, useEffect } from "react"
 
 export const useGetTodoList = (flagLoading) => {
 
@@ -8,8 +7,8 @@ export const useGetTodoList = (flagLoading) => {
     
       useEffect(()=>{
         setIsLoading(true)
-        axios.get('http://localhost:2016/todos')
-              .then((loadedData)=> loadedData.data)
+        fetch('http://localhost:2016/todos')
+              .then((loadedData)=> loadedData.json())
               .then((loadedProducts)=>{
                 setTodoList(loadedProducts)
               })

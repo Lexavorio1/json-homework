@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
-import styles from './App.module.css';
-import { Table, AddPersonForm } from './components';
-import { useFetchData, useCrudOperations } from './hooks';
+import React, { useState } from 'react'
+import styles from './App.module.css'
+import { Table, AddPersonForm } from './components'
+import { useFetchData, useCrudOperations } from './hooks'
 
 export const App = () => {
   const [showForm, setShowForm] = useState(false)
   const [people, setPeople] = useState([])
   const [error, setError] = useState(null)
 
-  const { isLoading, fetchData } = useFetchData('http://localhost:2014/people', setPeople, setError)
+  const { isLoading } = useFetchData(setPeople, setError)
   const { createPerson, deletePerson } = useCrudOperations(setPeople, setError)
 
-  useState(() => {
-        fetchData()
-    }, [])
-
-  const handleAddPerson = async (newPerson) => {
-    await createPerson(newPerson);
+  const handleAddPerson = (newPerson) => {
+    createPerson(newPerson)
     setShowForm(false);
   }
 
-  const handleDeletePerson = async (id) => {
-    await deletePerson(id);
-  }
-
   const toggleFormVisibility = () => {
-    setShowForm(!showForm);
+    setShowForm(!showForm)
   }
 
   return (
@@ -48,7 +40,7 @@ export const App = () => {
       <Table
         people={people}
         isLoading={isLoading}
-        onDelete={handleDeletePerson}
+        onDelete={deletePerson}
       />
     </div>
   )

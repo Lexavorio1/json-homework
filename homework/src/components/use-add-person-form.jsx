@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
-import styles from '../App.module.css';
-import { colourStyles } from './SelectStyles';
+import React, { useState } from 'react'
+import Select from 'react-select'
+import styles from '../App.module.css'
+import { colourStyles } from './SelectStyles'
 
 export const AddPersonForm = ({ onAdd, onCancel }) => {
-    const [name, setName] = useState('');
-    const [profession, setProfession] = useState('');
-    const [selectedTags, setSelectedTags] = useState([]);
+    const [name, setName] = useState('')
+    const [profession, setProfession] = useState('')
+    const [selectedTags, setSelectedTags] = useState([])
   
     const tagOptions = [
       { value: 'Трудолюбивый', label: 'Трудолюбивый', color: '#007bff' },
@@ -19,8 +19,8 @@ export const AddPersonForm = ({ onAdd, onCancel }) => {
     ];
   
     const handleTagChange = (selectedOptions) => {
-      setSelectedTags(selectedOptions || []);
-    };
+      setSelectedTags(selectedOptions || [])
+    }
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -28,12 +28,12 @@ export const AddPersonForm = ({ onAdd, onCancel }) => {
         name,
         profession,
         tags: selectedTags.map((tag) => tag.value),
-      };
+      }
       onAdd(newPerson)
       setName('')
       setProfession('')
       setSelectedTags([])
-    };
+    }
   
     return (
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -75,4 +75,4 @@ export const AddPersonForm = ({ onAdd, onCancel }) => {
         }}>Отмена</button>
       </form>
     );
-  };
+  }

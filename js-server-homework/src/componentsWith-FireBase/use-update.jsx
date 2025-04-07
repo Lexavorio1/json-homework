@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { ref, update } from "firebase/database";
-import { todosFireBase } from '../firebase';
+import { useState } from "react"
+import { ref, update } from "firebase/database"
+import { todosFireBase } from '../firebase'
 
 export const useUpdate = (setFlags) => {
     const [isUpdate, setIsUpdate] = useState(false);

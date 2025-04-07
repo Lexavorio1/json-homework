@@ -1,2 +1,2 @@
-export * from './useFetchData';
-export * from './useCrudOperations';
+export * from './use-fetch-data';
+export * from './use-crud-operation';
